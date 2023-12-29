@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motor Mağazası</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #f0ebeb;
+        }
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 10px auto;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        img {
+            
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .motor {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Motor Mağazası</h1>
+    </header>
+
+    <section class="motor">
+        <h2>Motor Modeli 1</h2>
+        <p>Model: <span id="model1">HONDA CBR 1000RR</span></p>
+        <ul>
+            <li>Güç: <span id="guc1">1000cc</span></li>
+            <li>Tork: <span id="tork1">160bg</span></li>
+
+        </ul>
+        <img src="/honda.jpg" alt="honda" style="height: 300 ; width: 300; ">
+        <button onclick="satinalMotor(1)">Satın Al</button>
+    </section>
+
+    <section class="motor">
+        <h2>Motor Modeli </h2>
+        <p>Model: BMW <span id="model2"> S1000RR</span></p>
+        <ul>
+            <li>Güç: <span id="guc2">1000cc</span></li>
+            <li>Tork: <span id="tork2">165bg</span></li>
+         
+        </ul>
+        <img class="bmw" src="/bmw.jpg" alt="bmw" >
+        <button onclick="satinalMotor(2)">Satın Al</button>
+    </section>
+    
+
+    <section>
+        <h2>Kayıt Ol</h2>
+        <form id="kayitFormu">
+            <label for="isim">Adınız:</label>
+            <input type="text" id="isim" name="isim" required>
+            <label for="email">E-posta Adresiniz:</label>
+            <input type="email" id="email" name="email" required>
+            <button type="submit">Kayıt Ol</button>
+        </form>
+    </section>
+
+    <script>
+        function satinalMotor(motorNo) {
+            alert("Motor " + motorNo + " satın alındı!");
+        }
+
+        document.getElementById('kayitFormu').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var isim = document.getElementById('isim').value;
+            var email = document.getElementById('email').value;
+            alert("Kayıt olundu!\nİsim: " + isim + "\nE-posta: " + email);
+        });
+    </script>
+
+</body>
+</html>
+
+
+
